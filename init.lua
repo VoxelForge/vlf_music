@@ -1,6 +1,7 @@
 local S = minetest.get_translator(minetest.get_current_modname())
 
-local music_enabled = minetest.settings:get_bool("vlf_game_music", true)
+--local music_enabled = minetest.settings:get_bool("vlf_game_music", true)
+local music_enabled = true
 
 local calm1  = "calm1"
 local calm2  = "calm2"
@@ -112,7 +113,7 @@ local function play()
 			local player_name = player:get_player_name()
 			local hp          = player:get_hp()
 			local pos         = player:get_pos()
-			local dimension   = vlf_worlds.pos_to_dimension(pos)
+			local dimension   = mcl_worlds.pos_to_dimension(pos)
 
 			local listener      = listeners[player_name]
 			local handle = listener and listener.handle
